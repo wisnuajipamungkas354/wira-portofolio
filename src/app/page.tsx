@@ -10,15 +10,20 @@
 // import Services from './home/partials/services';
 // import ServicesProcess from './home/partials/services-process';
 // import Testimonials from './home/partials/testimonials';
+
 // import TrustedBy from './home/partials/trusted-by';
 // import UseCaseTabs from './home/partials/usecase-tabs';
 
 import Navbar from "@/app/home/partials/navbar";
 
 import AchievementsSection from "./home/partials/achievements-section";
+import IndustrySection from "./home/partials/build-your-industry";
 import Hero from "./home/partials/hero";
 import { ItSolutionSection } from "./home/partials/it-solution";
 import ProfesionalWork from "./home/partials/profesional-work";
+import ProjectShowcase from "./home/partials/project-showcase";
+import SelectedWork from "./home/partials/selected-work";
+import TestimonialSection from "./home/partials/TestimonialSection";
 import TrustedBy from "./home/partials/trusted-by";
 
 const Home = () => {
@@ -30,6 +35,9 @@ const Home = () => {
       <AchievementsSection />
       <ProfesionalWork />
       <ItSolutionSection />
+      <IndustrySection />
+      <SelectedWork />
+      <TestimonialSection />
     </div>
   );
 };
