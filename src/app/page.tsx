@@ -18,6 +18,9 @@ import Navbar from "@/app/home/partials/navbar";
 
 import AchievementsSection from "./home/partials/achievements-section";
 import IndustrySection from "./home/partials/build-your-industry";
+import ContactUsSection from "./home/partials/contact-us-section";
+import FaqSection from "./home/partials/faq-section";
+import Footer from "./home/partials/footer";
 import Hero from "./home/partials/hero";
 import { ItSolutionSection } from "./home/partials/it-solution";
 import ProfesionalWork from "./home/partials/profesional-work";
@@ -38,6 +41,9 @@ const Home = () => {
       <IndustrySection />
       <SelectedWork />
       <TestimonialSection />
+      <FaqSection />
+      <ContactUsSection />
+      <Footer />
     </div>
   );
 };
