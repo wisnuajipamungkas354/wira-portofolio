@@ -5,6 +5,10 @@ type Navigation = {
 
 export const navigationData: Navigation[] = [
   {
+    label: 'Home',
+    href: '#home',
+  },
+  {
     label: 'About',
     href: '#about',
   },
