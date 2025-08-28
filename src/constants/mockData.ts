@@ -184,7 +184,7 @@ export const projectsData = {
       category: 'Web Development',
       image: '/images/project-1.jpg',
       description: 'Portfolio 1',
-      url: 'http//localhost:3000',
+      url: 'https://challenge-10-wirazzz354.vercel.app/',
     },
     {
       id: '2',
@@ -192,7 +192,7 @@ export const projectsData = {
       category: 'Web Development',
       image: '/images/project-2.jpg',
       description: 'Portfolio 2',
-      url: 'http//localhost:3000',
+      url: 'https://challenge-11-wirazzz354.vercel.app/',
     },
     {
       id: '3',
@@ -200,7 +200,7 @@ export const projectsData = {
       category: 'Web Development',
       image: '/images/project-3.jpg',
       description: 'Portfolio 3',
-      url: 'http//localhost:3000',
+      url: 'https://challenge-12-wirazzz354.vercel.app/',
     },
   ] as Project[],
 };
