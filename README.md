@@ -27,6 +27,9 @@ A modern, responsive portfolio website built with Next.js 14+, TypeScript, Tailw
 ```
 src/
 ├── app/                    # Next.js App Router
+|   ├── api/
+|   |   └── send/
+|   |       └── route.tsx  # Route for send email
 │   ├── layout.tsx         # Root layout with theme provider
 │   ├── page.tsx           # Home page
 │   └── globals.css        # Global styles and Tailwind config

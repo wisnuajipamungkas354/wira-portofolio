@@ -5,18 +5,48 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 import { contactData } from '@/constants/mockData';
+import Modal from '../modals/Modal';
 
 export function ContactSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalSuccess, setIsModalSuccess] = useState(false);
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+    senderEmail: '',
+    senderName: '',
+    contentMessage: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+  
+      if (response.ok) {
+        console.log('Pesan berhasil dikirim!');
+        // Reset form setelah pengiriman berhasil
+        setFormData({
+          senderEmail: '',
+          senderName: '',
+          contentMessage: ''
+        });
+        setIsModalSuccess(true);
+        setIsModalOpen(true);
+      } else {
+        console.log('Gagal');
+        setIsModalSuccess(false);
+        setIsModalOpen(true);
+      }
+    } catch (e) {
+      setIsModalSuccess(false);
+      setIsModalOpen(true);
+    }
   };
 
   const handleChange = (
@@ -104,16 +134,16 @@ export function ContactSection() {
                 {/* Name Field */}
                 <div>
                   <label
-                    htmlFor='name'
+                    htmlFor='senderName'
                     className='block font-montserrat font-bold text-[14px] leading-[28px] text-[#0A0D12] mb-1'
                   >
                     Name
                   </label>
                   <input
                     type='text'
-                    id='name'
-                    name='name'
-                    value={formData.name}
+                    id='senderName'
+                    name='senderName'
+                    value={formData.senderName}
                     onChange={handleChange}
                     required
                     className='w-full h-12 px-4 border border-[#D5D7DA] rounded-[12px] text-[16px] leading-[30px] text-[#535862] placeholder-[#535862] focus:ring-2 focus:ring-primary-200 focus:border-transparent transition-all duration-300'
@@ -124,16 +154,16 @@ export function ContactSection() {
                 {/* Email Field */}
                 <div>
                   <label
-                    htmlFor='email'
+                    htmlFor='senderEmail'
                     className='block font-montserrat font-bold text-[14px] leading-[28px] text-[#0A0D12] mb-1'
                   >
                     Email
                   </label>
                   <input
                     type='email'
-                    id='email'
-                    name='email'
-                    value={formData.email}
+                    id='senderEmail'
+                    name='senderEmail'
+                    value={formData.senderEmail}
                     onChange={handleChange}
                     required
                     className='w-full h-12 px-4 border border-[#D5D7DA] rounded-[12px] text-[16px] leading-[30px] text-[#535862] placeholder-[#535862] focus:ring-2 focus:ring-primary-200 focus:border-transparent transition-all duration-300'
@@ -144,17 +174,18 @@ export function ContactSection() {
                 {/* Message Field */}
                 <div>
                   <label
-                    htmlFor='message'
+                    htmlFor='contentMessage'
                     className='block font-montserrat font-bold text-[14px] leading-[28px] text-[#0A0D12] mb-1'
                   >
                     Message
                   </label>
                   <textarea
-                    id='message'
-                    name='message'
-                    value={formData.message}
+                    id='contentMessage'
+                    name='contentMessage'
+                    value={formData.contentMessage}
                     onChange={handleChange}
                     required
+                    minLength={5}
                     rows={5}
                     className='w-full h-[134px] px-4 py-2 border border-[#D5D7DA] rounded-[12px] text-[16px] leading-[30px] text-[#535862] placeholder-[#535862] focus:ring-2 focus:ring-primary-200 focus:border-transparent transition-all duration-300 resize-none'
                     placeholder='Enter your message'
@@ -175,6 +206,11 @@ export function ContactSection() {
           </motion.div>
         </div>
       </div>
+      <Modal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(!isModalOpen)}
+        isSuccess={isModalSuccess}
+      />
     </section>
   );
 }

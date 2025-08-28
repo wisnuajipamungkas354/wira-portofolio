@@ -33,7 +33,7 @@ export function AboutSection() {
         </motion.div>
 
         {/* Development Principles - Figma layout */}
-        <div className='flex items-center px-6 py-16 md:px-[120px] md:py-[80px] gap-10 md:gap-[40px] justify-center'>
+        <div className='grid lg:grid-cols-3 px-3 py-16 md:px-[30px] md:py-[80px] gap-3 md:gap-4'>
           {aboutData.principles.map((principle, index) => (
             <div key={principle.title} className='flex items-center gap-[40px]'>
               {/* Column content */}
@@ -42,7 +42,9 @@ export function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.15 }}
                 viewport={{ once: true }}
-                className='flex flex-col items-start gap-4 w-[346.67px] min-h-[219px]'
+                className={`px-5 py-8 flex flex-col items-start gap-4 w-full ${
+                  index === 0 ? '' : 'border-l-0 border-b-2 lg:border-l-2 lg:border-b-0 border-[#D5D7DA]'
+                }`}
               >
                 {/* Icon circle */}
                 <div
@@ -60,8 +62,8 @@ export function AboutSection() {
                 </div>
 
                 {/* Text block */}
-                <div className='flex flex-col items-start gap-2 w-[346.67px] min-h-[140px]'>
-                  <h3 className='text-[#0A0D12] font-bold tracking-[-0.02em] text-[24px] leading-[36px]'>
+                <div className='flex flex-col items-start gap-2 w-full lg:w-[346.67px] lg:min-h-[140px]'>
+                  <h3 className='text-[#0A0D12] font-bold tracking-[-0.02em] text-[20px] leading-[32px]'>
                     {principle.title}
                   </h3>
                   <p className='text-[#0A0D12] text-[16px] leading-[30px] tracking-[-0.03em]'>
@@ -69,14 +71,6 @@ export function AboutSection() {
                   </p>
                 </div>
               </motion.div>
-
-              {/* Vertical divider between columns (hide after last) */}
-              {index < aboutData.principles.length - 1 && (
-                <div
-                  className='hidden md:block w-px h-[176px]'
-                  style={{ borderRight: '1px solid #D5D7DA' }}
-                />
-              )}
             </div>
           ))}
         </div>

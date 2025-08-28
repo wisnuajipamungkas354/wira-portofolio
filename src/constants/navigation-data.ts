@@ -13,19 +13,19 @@ export const navigationData: Navigation[] = [
     href: '#about',
   },
   {
-    label: 'Services',
-    href: '#services',
+    label: 'Skill',
+    href: '#skills',
   },
   {
     label: 'Projects',
     href: '#projects',
   },
   {
-    label: 'Testimonials',
-    href: '#testimonials',
-  },
-  {
     label: 'FAQ',
     href: '#faq',
+  },
+  {
+    label: 'Contact',
+    href: '#contact',
   },
 ];

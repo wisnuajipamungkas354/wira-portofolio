@@ -44,7 +44,7 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section className='py-20 bg-white'>
+    <section className='py-20 bg-white' id='testimonials'>
       <div className='custom-container'>
         {/* Header */}
         <motion.div
