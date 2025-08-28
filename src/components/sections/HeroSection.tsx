@@ -16,7 +16,7 @@ export function HeroSection() {
   ];
 
   return (
-    <section className='flex justify-start lg:justify-center w-full h-[120vh] lg:h-[850px] bg-cover bg-center bg-no-repeat'
+    <section className='flex justify-center w-full h-[120vh] lg:h-[850px] bg-cover bg-center bg-no-repeat'
       style={{
         backgroundImage: "url('/images/bg-hero.png')",
         backgroundSize: 'cover',
@@ -25,6 +25,7 @@ export function HeroSection() {
       }}>
       <div className='pointer-events-none absolute inset-0 w-full h-[120vh] lg:h-[850px] bg-[rgba(165,56,96,0.94)] md:bg-[rgba(165,56,96,0.94)]' />
 
+      {/* DESKTOP VERSION */}
       <div className='relative m-auto hidden lg:block'>
 
         {/* ----------- Actor Image Center ------------- */}
@@ -452,13 +453,50 @@ export function HeroSection() {
             </div>
           </div>
         </div>
+
+        {/* Vector 1 - Clip path group from Figma */}
+        <div className='absolute block pointer-events-none'
+            style={{
+              left: -20,
+              bottom: 350,
+              zIndex: 8,
+            }}
+          >
+          <Image
+            src='/images/Vector.png'
+            alt='Decorative vector 1'
+            width={100}
+            height={100}
+            className='object-contain'
+          />
+        </div>
+
+        {/* Vector 2 - Clip path group from Figma with rotation */}
+        <div
+          className='absolute block pointer-events-none'
+          style={{
+            right: 0,
+            bottom: 150,
+            transform: 'rotate(100deg)',
+            zIndex: 8,
+          }}
+        >
+          <Image
+            src='/images/Vector.png'
+            alt='Decorative vector 2'
+            width={130}
+            height={130}
+            className='object-contain'
+          />
+        </div>
+
         <motion.div initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
           className='absolute text-center text-white/70 z-40 pointer-events-none px-2'
           style={{
             left: 'calc(50% - 125px/2 + 0.5px)',
-            bottom: -350,
+            bottom: 160,
             translateY: '50%',
             width: 125,
             height: 30,
@@ -467,7 +505,7 @@ export function HeroSection() {
           <div className='text-base font-semibold leading-[30px] mb-2'>
             Scroll Down
           </div>
-          <ChevronDown className='w-6 h-6 mx-auto animate-bounce' />
+          <ChevronDown className='w-10 h-10 mx-auto animate-bounce' />
         </motion.div>
       </div>
     </section>

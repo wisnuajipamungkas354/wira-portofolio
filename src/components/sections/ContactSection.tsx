@@ -86,27 +86,27 @@ export function ContactSection() {
             </div>
 
             {/* Portfolio Images */}
-            <div className='flex justify-center lg:items-start gap-5 w-full lg:max-w-[466px]'>
+            <div className='grid grid-cols-3 justify-center lg:items-start gap-3 lg:gap-5 w-full lg:max-w-[466px]'>
               <Image
                 src='/images/bg-hero.png'
                 alt='Portfolio sample 1'
-                width={150}
-                height={150}
-                className='rounded-[8px] object-cover'
+                width={142}
+                height={142}
+                className='rounded-xl object-cover'
               />
               <Image
                 src='/images/bg-hero.png'
                 alt='Portfolio sample 2'
                 width={142}
                 height={142}
-                className='object-cover'
+                className='rounded-xl object-cover'
               />
               <Image
                 src='/images/bg-hero.png'
                 alt='Portfolio sample 3'
                 width={142}
                 height={142}
-                className='object-cover'
+                className='rounded-xl object-cover'
               />
             </div>
           </motion.div>
