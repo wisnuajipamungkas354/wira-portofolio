@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import React from 'react';
-import SuccessIcon from '../../../public/images/message-success.png';
-import FailedIcon from '../../../public/images/message-failed.png';
+import SuccessIcon from '../../../public/images/message-success.webp';
+import FailedIcon from '../../../public/images/message-failed.webp';
 
 interface ModalProps {
   isOpen: boolean;

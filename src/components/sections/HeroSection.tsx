@@ -18,7 +18,7 @@ export function HeroSection() {
   return (
     <section className='flex justify-center w-full h-[120vh] lg:h-[850px] bg-cover bg-center bg-no-repeat'
       style={{
-        backgroundImage: "url('/images/bg-hero.png')",
+        backgroundImage: "url('/images/bg-hero.webp')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -31,14 +31,14 @@ export function HeroSection() {
         {/* ----------- Actor Image Center ------------- */}
         <div className='absolute z-20 pointer-events-none block'
           style={{
-            bottom: -172,
+            bottom: -132,
             left: '50%',
             transform: 'translateX(-50%) translateY(50%)',
             width: 500,
             height: 700,
           }} >
             <Image
-              src='/images/portrait-hero.png'
+              src='/images/profil.png'
               alt='Portrait hero'
               width={500}
               height={700}
@@ -269,7 +269,7 @@ export function HeroSection() {
             zIndex: 8,
             width: 200,
           }} >
-          <Image src='/images/Vector.png'
+          <Image src='/images/Vector.webp'
             alt='Decorative vector 1'
             width={166}
             height={166}
@@ -285,7 +285,7 @@ export function HeroSection() {
             width: 200,
             transform: 'rotate(-35deg)'
           }} >
-          <Image src='/images/Vector.png'
+          <Image src='/images/Vector.webp'
             alt='Decorative vector 1'
             width={166}
             height={166}
@@ -402,7 +402,7 @@ export function HeroSection() {
           {/* ----------- Actor Image Center ------------- */}
           <div className='relative z-20 pointer-events-none block'>
               <Image
-                src='/images/portrait-hero.png'
+                src='/images/portrait-hero.webp'
                 alt='Portrait hero'
                 width={400}
                 height={600}
@@ -463,7 +463,7 @@ export function HeroSection() {
             }}
           >
           <Image
-            src='/images/Vector.png'
+            src='/images/Vector.webp'
             alt='Decorative vector 1'
             width={100}
             height={100}
@@ -482,7 +482,7 @@ export function HeroSection() {
           }}
         >
           <Image
-            src='/images/Vector.png'
+            src='/images/Vector.webp'
             alt='Decorative vector 2'
             width={130}
             height={130}

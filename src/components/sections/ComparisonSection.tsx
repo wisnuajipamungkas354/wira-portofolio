@@ -65,7 +65,7 @@ export function ComparisonSection() {
             </div>
             <div className='relative w-[100px] h-[100px] rounded-full bg-[#B76080] overflow-hidden'>
               <Image
-                src='/images/Image-portrait.png'
+                src='/images/Image-portrait.webp'
                 alt='Profile'
                 fill
                 className='object-cover'
@@ -127,7 +127,7 @@ export function ComparisonSection() {
             </div>
             <div className='relative w-[100px] h-[100px] rounded-full bg-[#D5D7DA] overflow-hidden'>
               <Image
-                src='/images/default-portrait.png'
+                src='/images/default-portrait.webp'
                 alt='Generic Profile'
                 fill
                 className='object-cover'

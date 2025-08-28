@@ -88,21 +88,21 @@ export function ContactSection() {
             {/* Portfolio Images */}
             <div className='grid grid-cols-3 justify-center lg:items-start gap-3 lg:gap-5 w-full lg:max-w-[466px]'>
               <Image
-                src='/images/bg-hero.png'
+                src='/images/bg-hero.webp'
                 alt='Portfolio sample 1'
                 width={142}
                 height={142}
                 className='rounded-xl object-cover'
               />
               <Image
-                src='/images/bg-hero.png'
+                src='/images/bg-hero.webp'
                 alt='Portfolio sample 2'
                 width={142}
                 height={142}
                 className='rounded-xl object-cover'
               />
               <Image
-                src='/images/bg-hero.png'
+                src='/images/bg-hero.webp'
                 alt='Portfolio sample 3'
                 width={142}
                 height={142}
@@ -121,7 +121,7 @@ export function ContactSection() {
           >
             {/* Top Illustration */}
               <Image
-                src='/images/image-cs.png'
+                src='/images/image-cs.webp'
                 alt='Character leaning on the form'
                 width={192}
                 height={170}
