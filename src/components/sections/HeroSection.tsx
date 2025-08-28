@@ -18,38 +18,35 @@ export function HeroSection() {
   return (
     <section
       id='home'
-      className='relative overflow-hidden bg-cover bg-center bg-no-repeat min-h-screen'
+      className='flex flex-row justify-center min-w-[100vw]'
+    >
+      <div className='relative bg-cover bg-center bg-no-repeat h-[850px] mx-auto'
       style={{
         backgroundImage: "url('/images/bg-hero.png')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-      }}
-    >
+      }}>
       {/* Overlay color - different for mobile vs desktop */}
       <div
         className='pointer-events-none absolute inset-0 bg-[rgba(165,56,96,0.94)] md:bg-[rgba(165,56,96,0.94)]'
-        style={{
-          background: '#A53F65',
-        }}
       />
-
       {/* Center portrait image */}
       <div
         className='absolute z-10 pointer-events-none hidden lg:block'
         style={{
-          top: 289,
+          bottom: -97,
           left: '50%',
           transform: 'translateX(-50%)',
-          width: 610,
-          height: 735,
+          width: 500,
+          height: 700,
         }}
       >
         <Image
           src='/images/portrait-hero.png'
           alt='Portrait hero'
-          width={610}
-          height={735}
+          width={500}
+          height={700}
           priority
           className='select-none'
         />
@@ -58,7 +55,7 @@ export function HeroSection() {
       {/* Big background title */}
       <div
         className='absolute hidden lg:block'
-        style={{ left: 391, top: 259, width: 658, height: 398, zIndex: 9 }}
+        style={{ left: '23%', top: 200, width: 658, height: 398, zIndex: 9 }}
       >
         <div
           style={{
@@ -69,12 +66,12 @@ export function HeroSection() {
           }}
         >
           <div
-            style={{ fontSize: 187.765, lineHeight: '228px', fontWeight: 400 }}
+            style={{ fontSize: 170, lineHeight: '228px', fontWeight: 400 }}
           >
             FRONTEND
           </div>
           <div
-            style={{ fontSize: 168.824, lineHeight: '205px', fontWeight: 400 }}
+            style={{ fontSize: 160, lineHeight: '205px', fontWeight: 400 }}
           >
             DEVELOPER
           </div>
@@ -85,8 +82,8 @@ export function HeroSection() {
       <div
         className='absolute hidden lg:block pointer-events-none'
         style={{
-          left: 311,
-          top: 208,
+          left: '18%',
+          top: 155,
           width: 202,
           height: 142,
           zIndex: 31,
@@ -112,9 +109,9 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, delay: 0.1 }}
-        className='absolute left-1/2 -translate-x-1/2 z-30 flex items-center gap-[6px] rounded-full border hidden lg:flex'
+        className='absolute left-1/2 -translate-x-1/2 z-30 items-center gap-[6px] rounded-full border hidden lg:flex'
         style={{
-          top: 227,
+          top: 140,
           width: 195,
           height: 38,
           padding: '4px 16px',
@@ -134,19 +131,19 @@ export function HeroSection() {
       {/* Vertical tech stack - desktop only */}
       <div
         className='absolute z-30 hidden lg:flex'
-        style={{ left: 120, top: 107.57 }}
+        style={{ left: '5%', top: 107.57 }}
       >
         <div
-          className='flex flex-col items-center justify-center gap-[21.78px] w-[113px] h-[408.43px] rounded-full border'
-          style={{ borderColor: '#B76080', padding: '32.6747px 21.7831px' }}
+          className='flex flex-col items-center justify-center gap-4 w-20 h-72 rounded-full border'
+          style={{ borderColor: '#B76080'}}
         >
           {techIcons.map((icon) => (
             <div
               key={icon.src}
-              className='flex-center w-[69.43px] h-[69.43px] rounded-full border'
+              className='flex-center w-[50px] h-[50px] rounded-full border'
               style={{ borderColor: '#B76080' }}
             >
-              <Image src={icon.src} alt={icon.alt} width={36} height={36} />
+              <Image src={icon.src} alt={icon.alt} width={26} height={26} />
             </div>
           ))}
         </div>
@@ -155,18 +152,18 @@ export function HeroSection() {
       {/* Subtitle content block per Figma (mic + text) */}
       <div
         className='absolute z-30 hidden lg:flex flex-col gap-[14px]'
-        style={{ left: 120, top: 614, width: 451, height: 221 }}
+        style={{ left: '5%', bottom: '70px', width: 451, height: 221 }}
       >
         <div
-          className='flex-center w-[63px] h-[63px] rounded-full border'
+          className='flex-center w-[55px] h-[55px] rounded-full border'
           style={{ borderColor: '#B76080' }}
         >
-          <Mic className='w-[18.38px] h-[26.25px] text-white' />
+          <Mic className='w-[20px] h-[35px] text-white' />
         </div>
         <h2 className='text-white font-bold text-xl leading-[34px]'>
           {heroData.name}
         </h2>
-        <p className='text-white/95 text-lg leading-8'>{heroData.subtitle}</p>
+        <p className='text-white/95 text-base leading-8'>{heroData.subtitle}</p>
       </div>
 
       {/* Right-side stats & CTA per Figma */}
@@ -178,7 +175,7 @@ export function HeroSection() {
       >
         <div
           className='absolute z-30 hidden lg:flex flex-col items-start'
-          style={{ left: 1098, top: 237, width: 222, height: 568, gap: 20 }}
+          style={{ right: '6%', top: 237, width: 222, height: 568, gap: 20 }}
         >
           <div className='flex flex-col w-full'>
             {heroData.stats.map((s, i) => (
@@ -250,8 +247,8 @@ export function HeroSection() {
       <div
         className='absolute block pointer-events-none'
         style={{
-          right: '450px',
-          top: '725px',
+          left: '60%',
+          top: '625px',
 
           transform: 'rotate(59.14deg)',
           zIndex: 8,
@@ -792,11 +789,8 @@ export function HeroSection() {
           </div>
         </div>
       </div>
-
       {/* Main Content */}
-      <div className='custom-container pt-32 pb-16 relative z-10 hidden md:block'>
-        <div className='grid lg:grid-cols-2 gap-12 items-center min-h-[112vh]'></div>
-
+      <div className='pt-32 pb-16 relative z-10 hidden md:block min-w-[100vw] h-[850px]'>
         {/* Scroll Down Indicator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -805,7 +799,7 @@ export function HeroSection() {
           className='absolute text-center text-white/70 z-40 pointer-events-none hidden md:block'
           style={{
             left: 'calc(50% - 125px/2 + 0.5px)',
-            top: 954,
+            bottom: 50,
             width: 125,
             height: 30,
           }}
@@ -848,6 +842,7 @@ export function HeroSection() {
             </div>
           </div>
         </motion.div>
+      </div>
       </div>
     </section>
   );

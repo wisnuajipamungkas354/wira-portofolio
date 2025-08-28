@@ -71,7 +71,7 @@ export const heroData = {
   subtitle:
     'a frontend developer passionate about creating seamless digital experiences that are fast, responsive, and user-friendly.',
   stats: [
-    { value: '2+ Years', label: 'Experience' },
+    { value: '2+', label: 'Years Experience' },
     { value: '99%', label: 'Client Satisfaction' },
     { value: '3', label: 'Projects Delivered' },
     { value: '50', label: 'Clients Worldwide' },
