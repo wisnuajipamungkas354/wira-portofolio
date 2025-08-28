@@ -75,74 +75,76 @@ export function ProjectsSection() {
       <div className='w-full max-w-[1200px] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {projectsData.projects.map((project, index) => (
           <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className='flex flex-col items-start'
-          >
-            {/* Image Container */}
-            <div className='relative flex flex-row items-center p-4 gap-2 w-full h-[346.67px] bg-[#F5F5F5] rounded-[20px]'>
-              {/* Portfolio Image */}
-              <div className='w-full h-[314.67px] bg-gray-300 rounded-lg flex-1' />
+              key={project.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+          <a href={project.url} className='flex flex-col items-start'>
+                {/* Image Container */}
+                <div className='relative flex flex-row items-center p-4 gap-2 w-full h-[346.67px] bg-[#F5F5F5] rounded-[20px]'>
+                  {/* Portfolio Image */}
+                  <div className='w-full h-[314.67px] bg-gray-300 rounded-lg flex-1' />
 
-              {/* Best Portfolio Label */}
-              <div className='absolute w-[97px] h-[29px] left-[-9px] top-[28px] transform -scale-x-100'>
-                <div className='w-[97px] h-[21px] bg-[#F3B64C] rounded-l-[178.63px] flex items-center justify-center'>
-                  <span
-                    className='text-[#0A0D12] font-montserrat transform scale-x-[-1]'
+                  {/* Best Portfolio Label */}
+                  <div className='absolute w-[97px] h-[29px] left-[-9px] top-[28px] transform -scale-x-100'>
+                    <div className='w-[97px] h-[21px] bg-[#F3B64C] rounded-l-[178.63px] flex items-center justify-center'>
+                      <span
+                        className='text-[#0A0D12] font-montserrat transform scale-x-[-1]'
+                        style={{
+                          fontWeight: 600,
+                          fontSize: '12px',
+                          lineHeight: '24px',
+                          letterSpacing: '-0.03em',
+                        }}
+                      >
+                        Best Portfolio
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+              
+              {/* Info Container */}
+              <div className='flex flex-row justify-between items-center p-4 gap-6 w-full h-[118px] bg-[#F5F5F5] rounded-[20px]'>
+                {/* Text Container */}
+                <div className='flex flex-col items-start gap-3 mx-auto w-full h-[86px]'>
+                  {/* Portfolio Title */}
+                  <h3
+                    className='text-[#0A0D12] font-montserrat'
                     style={{
-                      fontWeight: 600,
-                      fontSize: '12px',
-                      lineHeight: '24px',
+                      fontWeight: 700,
+                      fontSize: '18px',
+                      lineHeight: '32px',
+                    }}
+                  >
+                    {project.title}
+                  </h3>
+
+                  {/* Divider Line */}
+                  <div className='w-full h-px border border-[#D5D7DA]' />
+
+                  {/* Portfolio Description */}
+                  <p
+                    className='text-[#535862] font-montserrat'
+                    style={{
+                      fontWeight: 500,
+                      fontSize: '16px',
+                      lineHeight: '30px',
                       letterSpacing: '-0.03em',
                     }}
                   >
-                    Best Portfolio
-                  </span>
+                    {project.category}
+                  </p>
+                </div>
+
+                {/* Button Container */}
+                <div className='flex items-center justify-center mx-auto w-11 h-9 bg-[#B76080] rounded-full'>
+                  <ArrowRight className='w-5 h-5 text-white' />
                 </div>
               </div>
-            </div>
-
-            {/* Info Container */}
-            <div className='flex flex-row justify-between items-center p-4 gap-6 w-full h-[118px] bg-[#F5F5F5] rounded-[20px]'>
-              {/* Text Container */}
-              <div className='flex flex-col items-start gap-3 mx-auto w-full h-[86px]'>
-                {/* Portfolio Title */}
-                <h3
-                  className='text-[#0A0D12] font-montserrat'
-                  style={{
-                    fontWeight: 700,
-                    fontSize: '18px',
-                    lineHeight: '32px',
-                  }}
-                >
-                  {project.title}
-                </h3>
-
-                {/* Divider Line */}
-                <div className='w-full h-px border border-[#D5D7DA]' />
-
-                {/* Portfolio Description */}
-                <p
-                  className='text-[#535862] font-montserrat'
-                  style={{
-                    fontWeight: 500,
-                    fontSize: '16px',
-                    lineHeight: '30px',
-                    letterSpacing: '-0.03em',
-                  }}
-                >
-                  {project.category}
-                </p>
-              </div>
-
-              {/* Button Container */}
-              <div className='flex items-center justify-center mx-auto w-11 h-9 bg-[#B76080] rounded-full'>
-                <ArrowRight className='w-5 h-5 text-white' />
-              </div>
-            </div>
+            </a>
           </motion.div>
         ))}
       </div>

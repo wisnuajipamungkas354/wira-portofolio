@@ -20,6 +20,7 @@ export interface Project {
   category: string;
   image: string;
   description: string;
+  url: string;
 }
 
 export interface Experience {
@@ -183,6 +184,7 @@ export const projectsData = {
       category: 'Web Development',
       image: '/images/project-1.jpg',
       description: 'Portfolio 1',
+      url: 'http//localhost:3000',
     },
     {
       id: '2',
@@ -190,6 +192,7 @@ export const projectsData = {
       category: 'Web Development',
       image: '/images/project-2.jpg',
       description: 'Portfolio 2',
+      url: 'http//localhost:3000',
     },
     {
       id: '3',
@@ -197,6 +200,7 @@ export const projectsData = {
       category: 'Web Development',
       image: '/images/project-3.jpg',
       description: 'Portfolio 3',
+      url: 'http//localhost:3000',
     },
   ] as Project[],
 };
